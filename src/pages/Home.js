@@ -12,6 +12,9 @@ export default function Home() {
             perferendis consequuntur expedita nesciunt nam quae omnis voluptatibus
             corporis.
           </p>
+          <div className="btn">
+          <a href="#" className="cv-btn">Get Offer</a>
+          </div>
         </div>
         <div className="hero-r"></div>
       </div>
