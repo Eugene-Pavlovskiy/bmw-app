@@ -17,26 +17,57 @@
   box-sizing: border-box;
 }
 
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+button{
+  outline: none;
+  border: none;
+}
+input{
+  outline: none;
+  border: none;
+}
+
 body {
   margin: 0;
 }
 
 .container {
-  margin: 1rem;
-  text-align: center;
+  width: 100%;
 }
+header {
+  position: fixed;
+  width: 100%;
+  background: transparent;
+  z-index: 10;
 
+}
 .nav {
   height: 80px;
-  background-color: #333;
-  color: white;
+  color: var(--blue);
   display: flex;
   justify-content: space-between;
-  align-items: stretch;
+  align-items: center;
   gap: 2rem;
   padding: 0 6rem;
 }
-
+.nav::before {
+  position: absolute;
+  top: 99px;
+  right: 90px;
+  left: 90px;
+  content: "";
+  height: 1px;
+  border-bottom: 1px solid transparent;
+  border-bottom-color: rgba(255,255,255,.4);
+}
+.nav-logo{
+  width: 50px;
+}
 .site-title {
   font-size: 2rem;
   color: #08d0f3;
@@ -56,6 +87,7 @@ body {
   display: flex;
   align-items: center;
   padding: .25rem;
+  z-index: 100;
 }
 
 .nav li.active {
@@ -69,18 +101,41 @@ body {
 .nav-icon {
   display: none;
 }
-
-.hero{
-  background-image: url(/src/img/bmw-cars.png);
+#main{
+  width:100%;
+  height:768px;
+  position: relative;
   background-repeat: no-repeat;
   background-position: center center;
-  background-attachment: fixed;
-  background-size: contain;
-  height: 100vh;
-  width: 100%;
+  background-size: cover;
+  background-image: url('/src/img/bmwMain.jpg');
+}
+.hero{
+  position: absolute;
+  top: 25%;
+  left: 7%;
+  display: grid;
+  grid-template-columns: 50%;
+  max-height: 25rem;
+  align-content: space-between;
+  
+}
+.hero-l {
+  background: var(--graygrad);
+  padding: 1.5rem;
+}
+.hero h1{
+  font-size: 3rem;
+  color: var(--white);
+}
+.hero h2{
+  color: var(--black);
+}
+.hero p{
+  color: var(--white);
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 768px) {
   .nav {
     padding: 0 2rem;
   }
@@ -90,7 +145,7 @@ body {
     flex-direction: column;
     width: 100%;
     position: absolute;
-    top: 80px;
+    top: 0;
     left: -110%;
     opacity: 1;
     text-align: center;
@@ -139,5 +194,31 @@ body {
     transform: translate(-100%, 60%);
     font-size: 1.8rem;
     cursor: pointer;
+    z-index: 100;
+  }
+
+  .hero{
+    position: absolute;
+    top: 25%;
+    left: 12%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    max-height: 25rem;
+    align-content: space-between;
+    
+  }
+  .hero-l {
+    background: var(--graygrad);
+    padding: 1.5rem;
+  }
+  .hero h1{
+    font-size: 2rem;
+    color: var(--white);
+  }
+  .hero h2{
+    color: var(--black);
+  }
+  .hero p{
+    color: var(--white);
   }
 }
