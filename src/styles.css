@@ -70,6 +70,16 @@ body {
   display: none;
 }
 
+.hero{
+  background-image: url(/src/img/bmw-cars.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: contain;
+  height: 100vh;
+  width: 100%;
+}
+
 @media screen and (max-width: 960px) {
   .nav {
     padding: 0 2rem;
