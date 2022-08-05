@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+:root{
+    --white: #f9f9f9;
+    --red: #c91111;
+    --black: #36383F;
+    --gray: #85888C;
+    --bmw: linear-gradient(45deg, rgb(5, 235, 246) 29%, rgb(5, 65, 244) 60%, rgb(249, 69, 4) 89%);
+    --graygrad: linear-gradient(0deg,transparent,rgba(0,0,0,.4));
+    --blue: #024f9c;
+    --bluegrad: rgba(17, 132, 226, 0.4);
+    --violet: #2f4288;
+    --mainfont: Poppins;
+} /* variables*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  margin: 1rem;
+  text-align: center;
+}
+
+.nav {
+  height: 80px;
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 0 6rem;
+}
+
+.site-title {
+  font-size: 2rem;
+  color: #08d0f3;
+}
+
+.nav ul {
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: .25rem;
+}
+
+.nav li.active {
+  color: #08d0f3;
+}
+
+.nav li:hover {
+  background-color: #777;
+}
+
+.nav-icon {
+  display: none;
+}
+
+@media screen and (max-width: 960px) {
+  .nav {
+    padding: 0 2rem;
+  }
+  .nav ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    left: -110%;
+    opacity: 1;
+    text-align: center;
+    align-items: center;
+    padding: 20px 0;
+  }
+
+  .nav-list:hover, .nav-list:focus {
+    border-bottom: 1px solid #ffdd40;
+  }
+  .nav-list.active {
+    background: #333;
+    left: 0px;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+  .nav-list:after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0;
+    background: transparent;
+    transition: width .7s ease,background-color .5s ease;
+  }
+
+  .nav li:hover {
+    padding-left: 0;
+
+  }
+  .nav-link {
+    display: table;
+    width: 100%;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 3rem;
+    padding: 1.5rem;
+  }
+
+  .nav-icon {
+    position: absolute;
+    top: 3px;
+    right: 10px;
+    display: block;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+}
